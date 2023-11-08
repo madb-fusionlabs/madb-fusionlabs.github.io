@@ -185,11 +185,6 @@ nav .toggle-navbar {
 	display: none;
 }
 nav .language-selector {
-	appearance: menulist !important;
-	-moz-appearance: menulist !important;
-	-webkit-appearance: menulist !important;
-	-o-appearance: menulist !important;
-
 	background-color: var(--white);
 	border: 3px solid;
 	border-radius: 5px;
@@ -201,7 +196,7 @@ nav .language-selector {
 	padding-left: 7px;
 }
 nav .language-selector option {
-	font-size: 0.8rem;
+	font-size: 1rem;
 	border-style: none;
 }
 
@@ -412,28 +407,28 @@ header h1 {
 }
 
 
-/* BLOGS */
+/* news */
 
-#blogs{
+#news{
 	background-color: var(--light);
 	padding: 3rem 0;
 }
 
-#blogs .container .text {
+#news .container .text {
 	margin-bottom: 1.5rem;
 }
 
-#blogs .container .text h3 {
+#news .container .text h3 {
 	margin-bottom: 0.5rem;
 }
 
-#blogs .container .all-blogs{
+#news .container .all-news{
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-#blogs .container .all-blogs .blog{
+#news .container .all-news .blog{
 	display: flex;
 	flex-direction: column;
 
@@ -447,7 +442,7 @@ header h1 {
 	box-shadow: var(--shadowFd);
 }
 
-#blogs .container .all-blogs .blog .text{
+#news .container .all-news .blog .text{
 	margin: 0 20px;
 	display: flex;
 	flex-direction: column;
@@ -659,8 +654,8 @@ header h1 {
 #service {
 	padding: 3rem 0;
 	padding-top: 6.5rem !important;
-	background-color: var(--light);
-	height: 30rem;
+	background-color: var(--white);
+	height: 100%;
 }
 #service .h3, #service.h6{
 	margin: 1rem;
@@ -813,9 +808,9 @@ footer{
     }
 
 
-	/* BLOGS RESPONSIVE */
+	/* news RESPONSIVE */
 
-	#blogs .container .all-blogs{
+	#news .container .all-news{
 		flex-direction: column;
 	}
 
