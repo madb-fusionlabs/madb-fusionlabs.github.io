@@ -1,0 +1,610 @@
+/* Landing Page MADB - FusionLabs | Uy Software Company */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@600&display=swap');
+
+*, 
+*::before,
+*::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+    font-family: "Merriweather", sans-serif;
+    background-color: var(--light);
+}
+html{
+    scroll-behavior: smooth;
+}
+img{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+
+main{
+    width: 100vw;
+}
+section{
+    height: 100vh;
+    width: 100vw;
+    padding: 0 4vw;
+    padding-top: 15vh;
+    position: relative;
+}
+
+/* On Scroll effect */
+
+.reveal{
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+/* Text Styles */
+
+h1{
+	font-size: 4rem;
+	font-weight: 700;
+}
+h2{
+	font-size: 2.75rem;
+	font-weight: 700;
+}
+h3{
+	font-size: 2.25rem;
+	font-weight: 700;
+    margin-bottom: 3vh;
+}
+h4{
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+h5{
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+h6{
+	font-size: 1rem;
+	font-weight: 700;
+	color: var(--green);
+}
+p{
+    font-size: 15px;
+    font-weight: 100;
+}
+
+/* Color Pallette */
+
+:root{
+    --green: #096037;
+    --green2: #14985a;
+
+    --dark: #191818;
+    --grey: #222;
+    --light: #eaeaea;
+    
+    --shadow: 5px 5px 20px rgba(70, 80, 80, 0.3);
+}
+
+
+/* BUTTONS STYLINGS */
+
+/* Button */
+
+.btn{
+    width: 14vw;
+    height: 8vh;
+    position: relative;
+    padding-top: 2.25vh;
+
+    border-radius: 4px;
+    background-color: var(--green);
+    color: var(--light);
+}
+.btn:hover{
+    background-color: var(--green);
+}
+
+/* Button 1 */
+
+.btn2{
+    width: 10vw;
+    height: 8vh;
+
+    border-style: solid;
+    border-color: var(--green);
+    border-radius: 2px;
+
+    color: var(--green);
+    background-color: var(--light);
+}
+.btn1:hover{
+    background-color: var(green);
+    color: var(--light);
+}
+
+
+/*  LANGUAGE SELECTION  */
+
+.sp, .en, .pt{ display: none; } 
+.sp.show, .en.show, .pt.show{ display:inline-block; }
+
+
+/* NAVIGATION BAR */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+
+    width: 100vw;
+    height: 15vh;
+    padding: 2vh 4vw;
+    margin-bottom: 20vh;
+    z-index: 1;
+
+    transition: all .2s;
+	background: transparent;
+}
+
+/* Navigation Bar - logo */
+
+.logo a{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo i {
+	display: block;
+	pointer-events: none;
+	color: var(--green);
+	font-size: 40px;
+	transform: translate(-5px, -2px);
+}
+
+.logo h3{
+    color: var(--light);
+    font-family: "Prompt", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.75;
+    margin-bottom: 0;
+}
+
+/* Navigation Bar - menu */
+
+header .menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .menu a {
+    color: var(--light);
+    margin: 0 1vw;
+    text-decoration: none;
+    position: relative;
+}
+header .menu a:hover {
+    color: var(--green); 
+}
+
+/* Navigation Bar - burger */
+
+header #burger{
+    display: none;
+}
+
+/* Navigation Bar - language selector */
+
+header .language-selector {
+	background-color: var(--light);
+	border-radius: 5px;
+	border-color: var(--green);
+	height: 35px;
+	width: 110px;
+	font-size: 1rem;
+	color: var(--green);
+	padding-left: 7px;
+}
+header .language-selector option {
+	font-size: 1rem;
+	border-style: none;
+}
+
+/* navBar default styles */
+
+header.default{
+	background-color: var(--light);
+}
+header.default .logo h3{
+	color: var(--dark);
+}
+header.default .menu a{
+	color: var(--dark);
+}
+header.default .menu a:hover {
+	color: var(--green);
+}
+header.default #burger{
+	color: var(--dark);
+}
+
+/* navBar active styles */
+
+header.active{
+	background-color: transparent;
+}
+header.active .logo h3{
+	color: var(--dark);
+}
+header.active .menu.active{
+    background-color: var(--light);
+}
+header.active .menu.active a{
+	color: var(--dark);
+}
+
+
+/* HERO SECTION */
+
+#hero {
+	background: url(images/hero-bg.webp) no-repeat center;
+    background-size: cover;
+	color: var(--light);
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	text-align: center;
+}
+#hero::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, .7);
+}
+#hero h1, 
+#hero h5{
+	margin-bottom: 5vh;
+    position: relative;
+}
+
+
+/* FEATURES */
+
+#features {
+    padding: 4vh 2.5vw;
+	background: var(--light);
+    display: flex;
+}
+#features .feature i {
+	font-size: 4rem;
+	color: var(--green);
+	margin-bottom: 1rem;
+}
+#features .feature .text h5 {
+	margin-bottom: 0.5rem;
+}
+
+
+/* ABOUT US */
+
+#about {
+    transform: translateY(-65vh);
+}
+#about .container{
+	display: flex;
+	grid-gap: 5vw;
+	margin-bottom: 5vh;
+}
+#about img {
+	max-width: 45vw;
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 4px;
+}
+
+
+/* SERVICES */
+
+#services {
+    transform: translateY(-40vh);
+}
+#services .all-services{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5vh 1vw;
+}
+#services .all-services .service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    
+    height: 50vh;
+    width: 22vw;
+    margin: 0 1vw;
+    padding: 1vh 1vw;
+
+    background-color: var(--light);
+    color: var(--dark);
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    transition: 0.4s ease-in-out;
+}
+#services .all-services .service i{
+    color: var(--green);
+    font-size: 5vw;
+}
+
+
+/* CONTACT US */ 
+
+#contact-us {
+    transform: translateY(-40vh);
+    margin-bottom: -20vh;
+}
+#contact-us .container{
+    display: flex;
+    grid-gap: 3vw;
+}
+#contact-us .container form{
+    display: flex;
+    flex-direction: column;
+}
+#contact-us form input[type="text"],
+#contact-us form input[type="email"],
+#contact-us form textarea {
+    color: var(--dark);
+    background-color: white;
+    border: solid var(--light);
+    border-radius: 2px;
+    font-family: sans-serif;
+    padding: 2vh 1vw;
+    margin: 0.5vh 0;
+    width: 40vw;
+    height: 8vh;
+}
+#contact-us form textarea {
+    resize: none; 
+    height: 20vh;
+    margin-bottom: 2vh;
+}
+#contact-us .container form .btn{
+    padding-top: 0;
+}
+
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5vh 4vw;
+    width: 100vw;
+    height: 45vh;
+    color: var(--light);
+    background-color: var(--green);
+}
+
+/* Footer - logo */
+
+footer .logo{
+    display: flex;
+}
+footer .logo h3{
+    font-weight: 100;
+    font-family: 'Montserrat', sans-serif;
+    transform: translateY(10px);
+}
+
+/* Footer - social media */
+
+footer .social-media img{
+    width: 40px;
+    padding: 5px;
+    margin: 0 0.5vw;
+    transition: 0.2 ease-in-out;
+}
+footer .social-media img:hover{
+    transform: translateY(-5px);
+    background-image: var(--gradient1);
+    border-radius: 50%;
+}
+footer a {
+    text-decoration: none;
+    color: var(--light);
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+/* ------------------------------------------------------ */
+                    /* RESPONSIVE */
+/* ------------------------------------------------------ */
+
+
+@media only screen and (max-width: 900px) {
+
+    /* NAVIGATION BAR | RESPONSIVE */
+
+    header {
+        padding: 5vh;
+    }
+    header.active{
+        background-color: var(--light);
+        color: var(--dark);
+    }
+    header.active #burger{
+        color: var(--dark);
+    }
+    header #burger {
+		display: inline-block;
+        color: var(--light);
+	}
+	header .menu {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		padding: 1.25rem;
+		flex-direction: column;
+		grid-gap: 1rem;
+		align-items: flex-start;
+		opacity: 0;
+		visibility: hidden;
+		transition: all .2s;
+	}
+	header .menu.active {
+		opacity: 1;
+		visibility: visible;
+        color: var(--dark);
+	}
+	header .menu.active .burger{
+		background-color: var(--dark);
+	}
+
+}
+
+@media only screen and (max-width: 685px) {
+
+    /* GENERAL SETTINGS | RESPONSIVE */
+
+    /* Text Styles | Responsive */
+
+    h1{
+        font-size: 35px;
+    }
+    p{
+        font-size: 12px;
+        font-weight: 100;
+    }
+
+    /* BUTTONS STYLINGS | RESPONSIVE */
+
+    .btn{
+        width: 30vw;
+        height: 8vh;
+    }
+    .btn1{
+        width: 25vw;
+    }
+    .btn2{
+        width: 25vw;
+    }
+
+
+
+    /* FEATURES | RESPONSIVE */
+
+    #features {
+		flex-wrap: wrap;
+	}
+    
+    /* ABOUT US - RESPONSIVE */
+
+    #about {
+        transform: translateY(0);
+    }
+	#about .container {
+		flex-wrap: wrap;
+	}
+	#about img {
+		max-width: 100%;
+	}
+	#about .container#one{
+		flex-direction: column-reverse ;
+	}
+
+
+    /* SERVICES | RESPONSIVE */
+
+    #services{
+        transform: translateY(140vh);
+    }
+
+    /* Services | Responsive - services */
+
+    #services .all-services{
+        flex-direction: column;
+        height: auto;
+        padding: 0 5vw;
+        margin-top: 4vh;
+    }
+    #services .all-services .service{    
+        height: 40vh;
+        width: 80vw;
+        margin: 1vh 0;
+        padding: 2vh 5vw;
+    }
+
+    /* Services | Responsive - buttons */
+
+    #services .all-services .service .btn{
+        width: 70vw;
+    }
+
+    /* Services | Responsive - icon */
+
+    #services .all-services .service i{
+        font-size: 12vw;
+    }
+    
+
+    /* CONTACT US | RESPONSIVE */
+
+    #contact-us{
+        transform: translateY(270vh);
+    }
+    #contact-us .container{
+        flex-direction: column;
+    }
+
+    /* Contact Us | Responsive - form */
+    
+    #contact-us form input[type="text"],
+    #contact-us form input[type="email"],
+    #contact-us form textarea {
+        width: 90vw;
+        margin: 0.5vh auto;
+    }
+
+    /* Contact Us | Responsive - btn */
+
+    #contact-us form .btn{
+        width: 90vw;
+        margin: 3vh auto;
+    }
+
+
+    /* FOOTER | RESPONSIVE */
+
+    footer {
+        transform: translateY(350vh);
+    }
+    footer .logo h3{
+        font-size: 20px;
+        transform: translateY(10px);
+    }
+
+
+}
